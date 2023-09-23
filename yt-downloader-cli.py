@@ -19,19 +19,13 @@ try:
 
 
 	def download_vid(yt):
-		stream = yt.streams.filter(progressive=True)
-		stream_str = str(stream)
-		
-		stream_list = stream_str.split("\"")
-		itag = stream_list[1]
-		
-		stream = yt.streams.get_by_itag(itag)
+		stream = yt.streams.get_highest_resolution()
 		try:
 			print("\n")
 			print("-" * 50)
 			print("Starting Download")
 			print("-" * 50)
-			stream.download("/downloaded_vids")
+			stream.download("/download")
 		except PermissionError:
 			print("\nLacking privilages to download in the designated folder. Will now attempt to download in current directory")
 			time.sleep(3)
