@@ -31,7 +31,7 @@ try:
 			print("-" * 50)
 			print("Starting Download")
 			print("-" * 50)
-			stream.download("/download")
+			stream.download("/downloaded_vids")
 		except PermissionError:
 			print("\nLacking privilages to download in the designated folder. Will now attempt to download in current directory")
 			time.sleep(3)
